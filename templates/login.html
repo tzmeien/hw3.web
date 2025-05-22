@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+<--! 登入頁面-->
+<--! 成功->歡迎頁面-->
+<--! 失敗->錯誤頁面-->
+
+
+{% block content %}
+
+<form method="POST" action="{{ url_for('login') }}">
+    <div class="page">
+        <div class="form">
+            <h1>會員登入</h1>
+            <label for="email">電子郵件</label><br>
+            <input type="email" name="email" id="email" required><br>
+            <label for="password">密碼</label><br>
+            <input type="password" name="password" id="password" required><br>
+        </div>
+        <div class="botton">
+            <button type="submit" class="btn btn-primary m-2">登入</button>
+        </div>
+    </div>
+</form>
+{% endblock %}
