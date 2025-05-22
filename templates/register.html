@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+<--! 註冊頁面-->
+
+
+{% block content %}
+<form method="POST" action="{{ url_for('register') }}">
+    <div class="page">
+        <div class="form">
+            <h1>會員註冊</h1>
+            <label for="name">用戶名</label><br>
+            <input type="text" name="name" id="name" required><br>
+            <label for="email">電子郵件</label><br>
+            <input type="email" name="email" id="email" required><br>
+            <label for="password">密碼</label><br>
+            <input type="password" name="password" id="password" required><br>
+            <label for="phone">手機</label><br>
+            <input type="text" name="phone" id="phone" required><br>
+            <label for="bth">出身年月日(YYYY-MM-DD)</label><br>
+            <input type="date" name="bth" id="bth" required><br>
+        </div>
+        <div class="botton">
+            <button type="submit" class="btn btn-primary m-2">註冊</button>
+        </div>
+    </div>
+</form>
+{% endblock %}
