@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+<--! 登入成功頁面-->
+
+
+{% block content %}
+<h1>歡迎，★{{ message }}★！</h1>
+<p>您已成功登入會員系統！</p>
+<div class=botton>
+    <a class="btn btn-primary m-2" href="{{ url_for('edit_profile') }}">修改基本資料</a>
+    <a id="delete" class="btn btn-danger m-2" href="#" onclick="confirmDelete()">刪除使用者</a>
+    <a class="btn btn-secondary m-2" href="{{ url_for('index') }}">返回首頁</a>
+</div>
+
+<script>
+function confirmDelete() {
+    if (confirm("若刪除這個使用者，所有相關紀錄將一併刪除，是否繼續？")) {
+        fetch("/delete", {
+            method: "POST"
+        })
+        .then(response => response.text())
+        .then(html => {
+            // 取代整個頁面內容
+            document.open();
+            document.write(html);
+            document.close();
+        })
+
+    }
+}
+</script>
+
+{% endblock %}
+
