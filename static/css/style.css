@@ -1,0 +1,35 @@
+h1 {
+    color: black;
+    text-align: center;
+    padding: 10px;
+}
+
+p {
+    color: black;
+    text-align: center;
+}
+
+.error p {
+    color: red;
+    text-align: center;
+}
+
+.page .form {
+    max-width: 450px;
+    margin: 50px auto 20px;
+    padding: 0px;
+}
+
+.botton {
+    display: block;
+    margin: 0px auto;
+    text-align: center;
+}
+
+.form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
