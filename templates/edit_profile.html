@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+<--! 修改頁面-->
+
+
+{% block content %}
+<form method="POST" action="{{ url_for('edit_profile') }}">
+    <div class="page">
+        <h1>修改基本資料</h1>
+        <div class="form">
+            <label for="name">用戶名</label><br>
+            <input type="text" name="name" id="name" required><br>
+            <label for="email">電子郵件</label><br>
+            <input type="email" name="email" id="email" required><br>
+            <label for="password">密碼</label><br>
+            <input type="password" name="password" id="password" required><br>
+            <label for="phone">手機</label><br>
+            <input type="text" name="phone" id="phone" required><br>
+            <label for="bth">出身年月日(YYYY-MM-DD)</label><br>
+            <input type="date" name="bth" id="bth" required><br>
+        </div>
+        <div class="botton">
+            <button type="submit" class="btn btn-primary m-2">儲存</button>
+            <a class="btn btn-secondary m-2" href="{{ url_for('welcome') }}">離開</a>
+        </div>
+    </div>
+</form>
+{% endblock %}
